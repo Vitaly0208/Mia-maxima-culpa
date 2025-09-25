@@ -11,59 +11,66 @@
  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
- <!-- Шапка сайта -->
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
+<header class="site-header">
+    <a class="site-header__brand" href="/">Лого</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+            <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="#contacts">Связаться</a></li> 
+        </ul>
+    </nav>
+</header>
  <!-- Уникальное основное содержимое страницы -->
+ <button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
+ <script>
+    const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+    const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    // Автовыбор: системная тема или сохранённый выбор пользователя
+    if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+        prefersDark)) {
+        document.body.classList.add('theme-dark');
+        btn?.setAttribute('aria-pressed', 'true');
+    }
+    // Переключение по кнопке с сохранением в localStorage
+    btn?.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('theme-dark');
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+    });
+</script>
  <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <!-- Кнопка открытия модалки -->
-<button id="openDialog" type="button">Написать нам</button>
-<!-- Модалка с формой -->
-<dialog id="contactDialog" aria-labelledby="dialogTitle">
-<h2 id="dialogTitle">Обратная связь</h2>
-<form id="contactForm" method="dialog" novalidate>
-<label for="name">Имя</label>
-<input id="name" name="name" type="text" required minlength="2"
-autocomplete="given-name">
-<label for="email">E-mail</label>
-<input id="email" name="email" type="email" required autocomplete="email">
-<label for="phone">Телефон</label>
-<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
-aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"> <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-<label for="date">Дата</label>
-<input id="date" name="date" type="date">
-<label for="topic">Тема</label>
-<select id="topic" name="topic" required>
-<option value="">Выберите тему</option> 
-<option>Вопрос</option> 
-<option>Заказ</option>
-</select>
-<label for="message">Сообщение</label>
-<textarea id="message" name="message" rows="4" required></textarea>
-<div class="form-actions">
-<button type="button" id="closeDialog">Закрыть</button>
-<button type="submit">Отправить</button> 
-</div>
-</form>
-</dialog>
+    <h1>Добро пожаловать на наш сайт!</h1>
+    <!-- Секция 1 с якорем -->
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <p>Описание предоставляемых услуг...</p>
+      <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+    </section>
  <!-- Секция 2 с якорем -->
  <section id="portfolio">
  <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
+ </section>
+ <figure>
+    <img
+        height="640px"
+        alt="Проект: макет мобильного приложения"
+        loading="lazy"
+        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+        src="./example2.jpg"
+        srcset="./example2.jpg 640w, ./example4.jpg 960w, ./example1.jpg 1280w"
+        width="1280px">
+    <figcaption>Наше мобильное приложение</figcaption>
+</figure>
+  <section class="hero">
+    <!-- Вставка с Rutube; замените XXXXXXXXXXXX на ID ролика -->
+    <div class="media">
+      <iframe
+          allow="autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+          src="https://rutube.ru/play/embed/video/5321f4473c68510f00cbc351c5dc8a9c//" title="Видео о проекте"></iframe>
+    </div>
  </section>
  <!-- Секция 3 с якорем -->
  <section id="contacts">

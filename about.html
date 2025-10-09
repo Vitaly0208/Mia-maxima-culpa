@@ -10,57 +10,78 @@
         <meta content="Узнайте больше о нашей компании и истории" name="description">
         <link href="styles.css" rel="stylesheet">
         <script defer src="main.js" type="module"></script>
-      </head>
-      <body>
-      
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <!-- Уникальное основное содержимое страницы -->
-<button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
-<script>
-    const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-    const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-    // Автовыбор: системная тема или сохранённый выбор пользователя
-    if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-        prefersDark)) {
-        document.body.classList.add('theme-dark');
-        btn?.setAttribute('aria-pressed', 'true');
-    }
-    // Переключение по кнопке с сохранением в localStorage
-    btn?.addEventListener('click', () => {
-        const isDark = document.body.classList.toggle('theme-dark');
-        btn.setAttribute('aria-pressed', String(isDark));
-        localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-    });
-</script>
-<main>
-    <!-- Простые "хлебные крошки" -->
-    <nav aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a> →
-      <span>О нас</span>
+    </head>
+<body>
+  <div class = "page-container">
+    <header class = "site-header">
+      <h1>О НАС</h1>
+    </header>
+    <nav class = "site-nav">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+      <button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
     </nav>
-    <h1>О нашей компании</h1>
-    <section>
-      <h2>Наша история</h2>
-      <p>Текст о том, как все начиналось...</p>
-    </section>
-    <section>
-      <h2>Наша команда</h2>
-      <p>Текст о команде...</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-    <p>Телефон: +7 (123) 456-78-90</p>
-  </footer>
-  </body>
-  </html>
+
+        <!-- Уникальное основное содержимое страницы -->
+    <script>
+        const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+        const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        // Автовыбор: системная тема или сохранённый выбор пользователя
+        if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+            prefersDark)) {
+            document.body.classList.add('theme-dark');
+            btn?.setAttribute('aria-pressed', 'true');
+        }
+        // Переключение по кнопке с сохранением в localStorage
+        btn?.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+        });
+    </script>
+
+    <main>
+      <div class = "about-header">
+        <h1 class = "profile-title">О нашей компании</h1>
+        <section calss = "about-section">
+          <h2 class = "about-history">Наша история</h2>
+          <div class = "about-text">
+            <p>Всё началось в 2020 году, когда двое друзей — фронтенд-разработчик Альфредо и дизайнер Пифагор — устали выполнять заказы на фрилансе по отдельности. Они заметили, что клиенты часто сталкиваются с одной и той же проблемой: красивый макет не превращается в рабочий сайт, а функциональный код выглядит безлико. Тогда они решили объединить усилия и создать небольшую студию, где дизайн и разработка будут идти рука об руку с самого первого дня проекта.</p>
+            <p>Первый офис — обычная однокомнатная квартира, первый клиент — местная массажка, которой нужен был простой сайт с услугами и кнопкой заказа. Но уже через полгода «СКАМ ПРОЕКТ» получила признание за интуитивно понятные интерфейсы и адаптивные решения. Команда выросла: к ним присоединились бэкенд-разработчик, SEO-специалист и менеджер проектов.</p>
+            <p>Сегодня «СКАМ ПРОЕКТ» — это команда из 12 профессионалов, которая создаёт не просто сайты, а цифровые продукты: от лендингов и корпоративных порталов до сложных веб-приложений и интернет-магазинов. Но главный принцип остался прежним: каждый проект — это не набор задач, а история клиента, которую мы помогаем рассказать миру через технологии и дизайн.</p>
+          </div>
+        </section>
+        <section class = "about-section">
+          <h2 class = "about-team">Команда</h2>
+          <div class = "about-grid">
+            <div class="creator-tag">Илон Максим</div>
+            <div class="creator-tag">Тим Кок</div>
+            <div class="creator-tag">Какой-то чувак</div>
+            <div class="creator-tag">Паша Дуров</div>
+            <div class="creator-tag">Макан</div>
+            <div class="creator-tag">Дональд Трамп</div>
+            <div class="creator-tag">Данила Горила</div>
+            <div class="creator-tag">Бр-бр Патапим</div>
+            <div class="creator-tag">Тони Старк</div>
+            <div class="creator-tag">Брэд Пит</div>
+            <div class="creator-tag">Наруто</div>
+            <div class="creator-tag">Степашка</div>
+            
+          </div>
+          <p class = "about-text">Наша команда - это синоним слова проффесионализм. Наши сотрудники - это лучшие специалисты со всего мира, они невероятно трудолюбивы и ответственны, эти люди совершенствуются каждый день, чтобы делать продукт наивысшего качества.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class = "basemnt-header">
+      <p class = "baemnt-article">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class = "basemnt-phone">Телефон: +7 (123) 456-78-90</p>
+    </footer>
+
+
+  </div>
+</body>
+</html>

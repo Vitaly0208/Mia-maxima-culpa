@@ -12,52 +12,62 @@
     <script defer src="main.js"></script>
   </head>
 <body>
-  <header>
-    <a href="/">Логотип или название сайта</a>
-    <!-- Главное меню навигации -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="about.html">О нас</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
+  <div class = "page-container">
+    <header class = "site-header">
+      <h1>КОНТАКТЫ</h1>
+    </header>
+    <nav class = "site-nav">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
       </ul>
+      <button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
     </nav>
-  </header>
-  <button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
-  <script>
-      const KEY = 'theme', btn = document.querySelector('.theme-toggle');
-      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-      // Автовыбор: системная тема или сохранённый выбор пользователя
-      if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
-          prefersDark)) {
-          document.body.classList.add('theme-dark');
-          btn?.setAttribute('aria-pressed', 'true');
-      }
-      // Переключение по кнопке с сохранением в localStorage
-      btn?.addEventListener('click', () => {
-          const isDark = document.body.classList.toggle('theme-dark');
-          btn.setAttribute('aria-pressed', String(isDark));
-          localStorage.setItem(KEY, isDark ? 'dark' : 'light');
-      });
-  </script>
-<main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>О нас</span>
- </nav>
- <h1>Контакты</h1>
- <section>
- <h2>Генеральный директор</h2>
- <p>Важная информация</p>
- </section>
- <section>
- <h2>Наша команда</h2>
- <p>Важная информация</p>
- </section>
- </main>
- <button id="openDialog" type="button">Написать нам</button>
- <!-- Модалка с формой -->
+    <script>
+        const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+        const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        // Автовыбор: системная тема или сохранённый выбор пользователя
+        if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+            prefersDark)) {
+            document.body.classList.add('theme-dark');
+            btn?.setAttribute('aria-pressed', 'true');
+        }
+        // Переключение по кнопке с сохранением в localStorage
+        btn?.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+        });
+    </script>
+    <main class = "content-3">
+      <article class = "profile-header">
+        <h1 class = "profile-title">Контакты</h1>
+        <section>
+          <div class = "about-text-director">
+            <h2>Генеральный директор</h2>
+            <h3>Шелоумов Виталий Константинович</h3>
+          </div>
+        <div class = "about-text-director">
+          <h3>8 903-288-09-57</h3>
+          <h3>vitalysheloumov@yandex.ru</h3>
+        </div>
+        </section>
+        <section>
+          <div class = "about-group">
+            <div class = "about-text-director">
+              <h3>Физический адресс</h3>
+              <h4> г. Подольск, дом Пушкина по улице Калатушкина</h4>
+            </div>
+            <div class = "about-text-director">
+              <h3> Время работы:</h3>
+              <h4>Пн-Пт: с 09:00 до 19:00</h4>
+            </div>
+          </div>
+        </section>
+      </article>
+      <button class = "open-button" id="openDialog" type="button">Написать нам</button>
+    </main>
  <dialog aria-labelledby="dialogTitle" id="contactDialog">
    <h2 id="dialogTitle">Обратная связь</h2>
    <form id="contactForm" method="dialog" novalidate>
@@ -89,9 +99,10 @@
      </div>
    </form>
  </dialog>
- <footer>
-  <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-  <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+ <footer class = "basemnt-header">
+  <p class = "baemnt-article">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+  <p class = "basemnt-phone">Телефон: +7 (123) 456-78-90</p>
+</footer>
+</div>
 </body>
 </html>

@@ -5,16 +5,20 @@
 <script src="main.js" defer></script>
 <script src="validation.js" type = "module" defer></script>
  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
  <title>Главная - Название вашего сайта</title>
  <meta name="description" content="Краткое описание главной страницы вашего сайта">
  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class = "page-container">
+
+        <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
         <header class="site-header">
             <h1>VAIB COMPANY</h1>
         </header>
+
         <nav class="site-nav" aria-label="Основная навигация">
             <ul class="site-nav__list">
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -23,19 +27,15 @@
             </ul>
             <button aria-pressed="false" class="theme-toggle" type="button">Тема</button>
         </nav>
-
-        <!-- Уникальное основное содержимое страницы -->
         
         <script>
             const KEY = 'theme', btn = document.querySelector('.theme-toggle');
             const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-            // Автовыбор: системная тема или сохранённый выбор пользователя
             if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
                 prefersDark)) {
                 document.body.classList.add('theme-dark');
                 btn?.setAttribute('aria-pressed', 'true');
             }
-            // Переключение по кнопке с сохранением в localStorage
             btn?.addEventListener('click', () => {
                 const isDark = document.body.classList.toggle('theme-dark');
                 btn.setAttribute('aria-pressed', String(isDark));
@@ -43,10 +43,9 @@
             });
         </script>
 
-        <main class = "content">
+        <main id = "content" class = "content">
             <article class = "profile-header">
                 <h1 class = "profile-title">Добро пожаловать на наш сайт!</h1>
-                <!-- Секция 1 с якорем -->
                 <section id="services">
                     <h2 class = "profile-services">Наши услуги</h2>
                     <div class = "profile-grid">
@@ -55,22 +54,21 @@
                         <div class="skill-tag">Веб-дизайн</div>
                         <div class="skill-tag">Коучинг</div>
                     </div>
-                    <a class = "profile-connect" href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+                    <a class = "profile-connect" href="#contacts">Связаться с нами</a>
                 </section>
                 <section id="portfolio">
-                    <h2 class = "profile-works">Портфолио</h2>
+                    <h2 class = "profile-works">Наше портфолио</h2>
                 </section>
             </article>
-            <!-- Секция 2 с якорем -->
             <figure>
                 <div class = "profile-photo-grid">
                     <img class = "profile-photo"
-                    height="640px"
+                    max-height="480px"
                     alt="Проект: макет мобильного приложения"
                     loading="lazy"
                     sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
                     src="./example2.jpg"
-                    srcset="./example2.jpg 640w, ./example4.jpg 960w, ./example1.jpg 1280w"
+                    srcset="./example3.jpg 640w, ./example4.jpg 960w, ./example1.jpg 1280w"
                     width="1280px">
                     <img class = "profile-photo"
                     height="640px"
@@ -78,7 +76,7 @@
                     loading="lazy"
                     sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
                     src="./example4.jpg"
-                    srcset="./example2.jpg 640w, ./example1.jpg 960w, ./example2.jpg 1280w"
+                    srcset="./example4.jpg 640w, ./example1.jpg 960w, ./example2.jpg 1280w"
                     width="1280px">
                     <img class = "profile-photo"
                     height="640px"
@@ -86,7 +84,7 @@
                     loading="lazy"
                     sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
                     src="./example2.jpg"
-                    srcset="./example2.jpg 640w, ./example4.jpg 960w, ./example4.jpg 1280w"
+                    srcset="./example1.jpg 640w, ./example2.jpg 960w, ./example3.jpg 1280w"
                     width="1280px">
                     <img class = "profile-photo"
                     height="640px"
@@ -94,7 +92,7 @@
                     loading="lazy"
                     sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
                     src="./example4.jpg"
-                    srcset="./example2.jpg 640w, ./example1.jpg 960w, ./example3.jpg 1280w"
+                    srcset="./example2.jpg 640w, ./example3.jpg 960w, ./example4.jpg 1280w"
                     width="1280px">
                 </div>
             </figure>
@@ -107,19 +105,18 @@
                     src="https://rutube.ru/play/embed/video/5321f4473c68510f00cbc351c5dc8a9c//" title="Видео о проекте"></iframe>
                 </div>
             </section>
-            <!-- Секция 3 с якорем -->
             <nav class = "contacts-header" id="contacts">
                 <h2 class = "contacts-info">Контактная информация</h2>
                 <p class = "contacts-ours">Наши контакты...</p>
-                <a class = "contatcs-more" href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
+                <a class = "contacts-more" href="contacts.html" style = "text-decoration: none;">Подробнее</a>
             </nav>
         </main>
 
-         <!-- Подвал сайта -->
         <footer class = "basemnt-header">
-            <p class = "baemnt-article">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class = "basemnt-article">&copy; 2025 VAIB COMPANY. Все права защищены.</p>
             <p class = "basemnt-phone">Телефон: +7 (123) 456-78-90</p>
         </footer>
+
     </div>
 </body>
 </html>

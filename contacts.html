@@ -2,12 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная - Название вашего сайта</title>
-    <meta content="Краткое описание главной страницы вашего сайта" name="description">
     <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
     <title>Контакты</title>
-    <meta content="Узнайте больше о нашей компании и истории" name="description">
     <link href="styles.css" rel="stylesheet">
     <script defer src="main.js"></script>
   </head>
@@ -68,36 +66,53 @@
       </article>
       <button class = "open-button" id="openDialog" type="button">Написать нам</button>
     </main>
+
  <dialog aria-labelledby="dialogTitle" id="contactDialog">
-   <h2 id="dialogTitle">Обратная связь</h2>
+
+  <div class = "modal-header">
+    <h2 id="dialogTitle">Обратная связь</h2>
+  </div>
+
+  <div class = "modal-content">
    <form id="contactForm" method="dialog" novalidate>
-     <label for="name">Имя</label>
-     <input autocomplete="given-name" id="name" minlength="2" name="name" required
-            type="text">
+    <div class = "form-group">
+      <label for="name">Имя</label>
+      <input autocomplete="given-name" id="name" minlength="2" name="name" required placeholder="Введите ваше имя">
+    </div>
+    <div class = "form-group">
      <label for="email">E-mail</label>
-     <input autocomplete="email" id="email" name="email" required
-            type="email">
+     <input autocomplete="email" id="email" name="email" required placeholder="example@mail.ru">
+    </div>
+    <div class = "form-group">
      <label for="phone">Телефон</label>
      <input aria-describedby="phoneHelp" autocomplete="tel" id="phone" inputmode="tel"
             name="phone"
             pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" placeholder="+7 (___) ___-__-__"
             required type="tel">
-     <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-     <label for="date">Дата</label>
-     <input id="date" name="date" type="date">
-     <label for="topic">Тема</label>
-     <select id="topic" name="topic" required>
-       <option value="">Выберите тему</option>
-       <option>Вопрос</option>
-       <option>Заказ</option>
-     </select>
-     <label for="message">Сообщение</label>
-     <textarea id="message" name="message" required rows="4"></textarea>
-     <div class="form-actions">
-       <button id="closeDialog" type="button">Закрыть</button>
-       <button type="submit">Отправить</button>
-     </div>
+            <div class = "form-group">
+              <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+             </div>
+             <div class = "form-group">
+              <label for="date">Дата</label>
+              <input id="date" name="date" type="date">
+             </div>
+             <div class = "form-group">
+              <label for="topic">Тема</label>
+              <select id="topic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option>Вопрос</option>
+                <option>Заказ</option>
+              </select>
+              <div class = "form-group">
+               <label for="message">Сообщение</label>
+               <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+              </div>
+              <div class="form-actions">
+                <button id="closeDialog" type="button">Закрыть</button>
+                <button type="submit">Отправить</button>
+              </div>
    </form>
+  </div>
  </dialog>
  <footer class = "basemnt-header">
   <p class = "baemnt-article">&copy; 2023 Название вашего сайта. Все права защищены.</p>

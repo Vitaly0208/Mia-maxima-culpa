@@ -42,7 +42,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 730px) {
     .site-nav {
         padding: 1rem;
         flex-direction: row;
@@ -54,18 +54,20 @@
     }
     .site-nav__item {
         width: 100%;
-        max-width: 6rem;
-        max-height: 2.5rem;
+        max-width: 5.5rem;
+        max-height: 2.3rem;
     }
     .site-nav__link {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         word-break: break-all;
     }
     .skill-tag{
         max-width: 200px;
     }
     .theme-toggle{
-        max-width: 6rem;
+        max-width: 5.4rem;
+        max-height: 2.3rem;
+        font-size: 0.9rem;
     }
     .site-header h1 {
         font-size: 2rem;
@@ -124,5 +126,5 @@
 }
 
 @media (pointer: coarse){
-    a, button, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
+    a, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
 }

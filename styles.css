@@ -383,7 +383,7 @@ label {
 input, select, textarea, button {
     width: 100%;
     max-width: 480px; 
-    padding: .5rem .75rem; 
+    padding: .5rem .6rem; 
     border: 1px solid #c8c8c8; 
     border-radius: 8px; 
     background: #fff;
@@ -394,13 +394,24 @@ button, [type="submit"], [type="button"] {
     max-width: 140px;
     max-height: 45px;
     color: var(--color-bt);
-    border-color: #d2a5d2; 
-    border-width: 2px;
+    border: 2px solid #d2a5d2;
     cursor: pointer;
+    text-align: center;
+
+    /* 🎯 Центрирование текста по вертикали и горизонтали */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Дополнительно: уберите padding, если он мешает */
+    padding: 1rem; /* или оставьте небольшой padding, если нужно */
+    font-size: 1rem; /* подстройте, если текст слишком большой/маленький */
+    line-height: 1; /* чтобы не было лишнего пространства */
+    white-space: nowrap; /* чтобы текст не переносился */
 }
 
 :where(input, select, textarea, button):focus-visible {
-    outline: 2px solid #0a84ff; outline-offset: 2px; 
+    outline: 2px solid #9e0ee0; outline-offset: 2px; 
 }
 
 :where(a,button,input,select,textarea):focus-visible{

@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
 <link rel="stylesheet" href="styles.css">
-<script src="main.js" defer></script>
-<script src="validation.js" type = "module" defer></script>
+<link rel="stylesheet" href="media.css">
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
  <title>Главная - Название вашего сайта</title>
@@ -54,57 +53,82 @@
                         <div class="skill-tag">Веб-дизайн</div>
                         <div class="skill-tag">Коучинг</div>
                     </div>
-                    <a class = "profile-connect" href="#contacts">Связаться с нами</a>
                 </section>
                 <section id="portfolio">
                     <h2 class = "profile-works">Наше портфолио</h2>
                 </section>
             </article>
-            <figure>
-                <div class = "profile-photo-grid">
-                    <img class = "profile-photo"
-                    max-height="480px"
-                    alt="Проект: макет мобильного приложения"
-                    loading="lazy"
-                    sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
-                    src="./example2.jpg"
-                    srcset="./example3.jpg 640w, ./example4.jpg 960w, ./example1.jpg 1280w"
-                    width="1280px">
-                    <img class = "profile-photo"
-                    height="640px"
-                    alt="Проект: макет мобильного приложения"
-                    loading="lazy"
-                    sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
-                    src="./example4.jpg"
-                    srcset="./example4.jpg 640w, ./example1.jpg 960w, ./example2.jpg 1280w"
-                    width="1280px">
-                    <img class = "profile-photo"
-                    height="640px"
-                    alt="Проект: макет мобильного приложения"
-                    loading="lazy"
-                    sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
-                    src="./example2.jpg"
-                    srcset="./example1.jpg 640w, ./example2.jpg 960w, ./example3.jpg 1280w"
-                    width="1280px">
-                    <img class = "profile-photo"
-                    height="640px"
-                    alt="Проект: макет мобильного приложения"
-                    loading="lazy"
-                    sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
-                    src="./example4.jpg"
-                    srcset="./example2.jpg 640w, ./example3.jpg 960w, ./example4.jpg 1280w"
-                    width="1280px">
-                </div>
-            </figure>
-            <section class="hero">
+            <div class="profile-photo-grid">
+                <figure class="project-card project-card--span-2">
+                    <img class="profile-photo"
+                        alt="Проект: макет мобильного приложения"
+                        loading="lazy"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+                        src="./example2.jpg"
+                        srcset="./example3.jpg 640w, ./example4.jpg 960w, ./example1.jpg 1280w"
+                        width="1280px">
+
+                    <figcaption class="project-info">
+                        <h3>Мобильное приложение</h3>
+                        <p>Дизайн интерфейса для приложений на iOS и Android</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="project-card">
+                    <img class="profile-photo"
+                        alt="Проект: макет мобильного приложения"
+                        loading="lazy"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+                        src="./example4.jpg"
+                        srcset="./example4.jpg 640w, ./example1.jpg 960w, ./example2.jpg 1280w"
+                        width="1280px">
+
+                    <figcaption class="project-info">
+                        <h3>Веб-платформа</h3>
+                        <p>Корпоративный сайт с адаптивным дизайном</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="project-card">
+                    <img class="profile-photo"
+                        alt="Проект: макет мобильного приложения"
+                        loading="lazy"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+                        src="./example2.jpg"
+                        srcset="./example1.jpg 640w, ./example2.jpg 960w, ./example3.jpg 1280w"
+                        width="1280px">
+
+                    <figcaption class="project-info">
+                        <h3>Казино</h3>
+                        <p>Блэкджэк, рулетки, ракетки и ставки на спорт</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="project-card project-card--span-2">
+                    <img class="profile-photo"
+                        alt="Проект: макет мобильного приложения"
+                        loading="lazy"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px"
+                        src="./example2.jpg"
+                        srcset="./example2.jpg 640w, ./example3.jpg 960w, ./example4.jpg 1280w"
+                        width="1280px">
+
+                    <figcaption class="project-info">
+                        <h3>Брендбук</h3>
+                        <p>Визуальный современный стиль и гайдлайн для компании</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <!-- <section class="hero">
                 <div class="media">
-                <iframe
-                    allow="autoplay; encrypted-media; picture-in-picture; web-share"
-                    allowfullscreen
-                    loading="lazy"
-                    src="https://rutube.ru/play/embed/video/5321f4473c68510f00cbc351c5dc8a9c//" title="Видео о проекте"></iframe>
+                    <iframe
+                        allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                        allowfullscreen
+                        loading="lazy"
+                        src="https://rutube.ru/play/embed/video/5321f4473c68510f00cbc351c5dc8a9c//" title="Видео о проекте">
+                    </iframe>
                 </div>
-            </section>
+            </section> -->
             <nav class = "contacts-header" id="contacts">
                 <h2 class = "contacts-info">Контактная информация</h2>
                 <p class = "contacts-ours">Наши контакты...</p>

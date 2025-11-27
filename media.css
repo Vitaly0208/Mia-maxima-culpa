@@ -1,0 +1,128 @@
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .profile-photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(280px, auto);
+    }
+        .project-card {
+        width: 100%;
+    }
+    .project-card--span-2 {
+        grid-column: span 2;
+    }
+    .profile-photo{
+        height: auto;
+    }
+    .profile-photo-grid > :nth-child(1) {
+        grid-column: span 2;
+    }
+        .profile-photo-grid > :nth-child(4) {
+        grid-column: span 2;
+    }
+
+    .profile-photo-grid > :nth-child(3),
+    .profile-photo-grid > :nth-child(2) {
+        grid-column: span 1;
+    }
+    .site-header h1 {
+        font-size: 2.2rem;
+    }
+    .profile-title{
+        margin: 0;
+        font-size: 1.7rem;
+    }
+    .profile-services{
+        margin: 0;
+        font-size: 1.7rem;
+    }
+    .profile-works{
+        margin: 0;
+        font-size: 1.7rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .site-nav {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+    }
+    .site-nav__list {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .site-nav__item {
+        width: 100%;
+        max-width: 6rem;
+        max-height: 2.5rem;
+    }
+    .site-nav__link {
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+    .skill-tag{
+        max-width: 200px;
+    }
+    .theme-toggle{
+        max-width: 6rem;
+    }
+    .site-header h1 {
+        font-size: 2rem;
+    }
+    .profile-title{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .profile-services{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .profile-works{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    main.content {
+        padding: 20px;
+    } 
+  .about-text-director {
+    min-width: auto;
+    max-width: 100%;
+    margin: 20px auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .profile-photo-grid {
+        grid-template-columns: 1fr 0.5fr 1fr;
+    }
+    .project-card {
+        width: 100%;
+        height: auto;
+    }
+    .profile-photo-grid > :nth-child(1) {
+        grid-column: span 2;
+    }
+    .profile-photo-grid > :nth-child(2) {
+        grid-column: span 1;
+    }
+    .profile-photo-grid > :nth-child(3) {
+        grid-column: span 1;
+    }
+    .profile-photo-grid > :nth-child(4) {
+        grid-column: span 2;
+    }
+}
+
+@media (pointer: coarse){
+    a, button, .nav__link { min-height: 44px; padding: .75rem 1rem; } 
+}

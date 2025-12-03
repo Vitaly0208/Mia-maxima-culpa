@@ -6,11 +6,6 @@
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
     display: grid;
     grid-template-rows: auto auto 1fr auto;
-    /* grid-template-areas:
-        "header"
-        "nav"
-        "main"
-        "footer"; */
 }
 .site-header {
     background: var(--color-header-bg);
@@ -127,33 +122,47 @@ main.content {
 }
 
 .profile-photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    gap: 1rem;
-    margin-bottom: 5.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5.5rem;
+  padding: 0 1rem;
 }
-.project-card {
-    background: var(--color-page);
-    border-radius: 15px;
-    border: 2px solid #ab9bae;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
 
+.project-card {
+  background: var(--color-page);
+  border-radius: 16px;
+  border: 2px solid #ab9bae;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  max-width: 100%;
 }
-.project-info{
-    text-align: center  ;
-    flex: 0 0 40%;
-}
+
 .profile-photo {
-    width: auto;
-    flex: 1;
-    height: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+  aspect-ratio: 4 / 3; 
+  background-color: #f0f0f0; 
 }
+
+.project-info {
+  text-align: center;
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
+
 .profile-photo:hover{
     transform: scale(1);
 }
@@ -175,13 +184,13 @@ main.content {
     padding: 1.25rem;
     border-radius: 25px;
     font-weight: 600;
-    font-size: clamp(1rem, 3vw, 1.375rem); /* 16–22px */
+    font-size: clamp(1rem, 3vw, 1.375rem);
     box-shadow: 0 4px 15px rgba(118, 156, 190, 0.3);
     transition: all 0.3s ease;
     text-align: center;
-    width: 100%; /* вместо фиксированной ширины */
-    max-width: 350px; /* можно оставить как ограничение на десктопе */
-    margin-inline: auto; /* центрирование */
+    width: 100%;
+    max-width: 350px; 
+    margin-inline: auto;
 }
 .skill-tag:hover {
     transform: translateY(-3px);
@@ -383,7 +392,7 @@ label {
 input, select, textarea, button {
     width: 100%;
     max-width: 480px; 
-    padding: .5rem .75rem; 
+    padding: .5rem .6rem; 
     border: 1px solid #c8c8c8; 
     border-radius: 8px; 
     background: #fff;
@@ -394,13 +403,24 @@ button, [type="submit"], [type="button"] {
     max-width: 140px;
     max-height: 45px;
     color: var(--color-bt);
-    border-color: #d2a5d2; 
-    border-width: 2px;
+    border: 2px solid #d2a5d2;
     cursor: pointer;
+    text-align: center;
+
+    /* 🎯 Центрирование текста по вертикали и горизонтали */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Дополнительно: уберите padding, если он мешает */
+    padding: 1rem; /* или оставьте небольшой padding, если нужно */
+    font-size: 1rem; /* подстройте, если текст слишком большой/маленький */
+    line-height: 1; /* чтобы не было лишнего пространства */
+    white-space: nowrap; /* чтобы текст не переносился */
 }
 
 :where(input, select, textarea, button):focus-visible {
-    outline: 2px solid #0a84ff; outline-offset: 2px; 
+    outline: 2px solid #9e0ee0; outline-offset: 2px; 
 }
 
 :where(a,button,input,select,textarea):focus-visible{
@@ -507,12 +527,9 @@ html {
 } 
 *{ 
     box-sizing:border-box; 
-} 
 
-html,body{ 
-    margin:0; 
-    padding:0; 
-}
+    padding: 0;
+} 
 
 .container{ 
     width:min(100% - 2*var(--space-4), 1120px); 
@@ -573,6 +590,17 @@ main.content-3 {
 .about-text-director,
 .mmm {
     color: var(--color-fg);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
 }
 .modal-header {
     color: white;
